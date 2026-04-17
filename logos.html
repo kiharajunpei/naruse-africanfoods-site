@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成勢アフリカンフーズ — Logo Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f2741;
+    --navy-deep: #0a1d32;
+    --ivory: #f6f1e8;
+    --paper: #ffffff;
+    --ochre: #c9a35a;
+    --ochre-deep: #a88538;
+    --ink: #14161a;
+    --muted: #6b7485;
+    --border: rgba(15, 39, 65, 0.1);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Sans JP", "Inter", sans-serif;
+    background: var(--ivory);
+    color: var(--ink);
+    padding: 60px 32px 120px;
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1280px; margin: 0 auto; }
+  header.page {
+    margin-bottom: 72px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  .page-eyebrow {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    color: var(--ochre-deep);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-family: "Noto Serif JP", serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+  .page-lead {
+    color: var(--muted);
+    max-width: 640px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .concept {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .concept-preview {
+    height: 280px;
+    display: grid;
+    place-items: center;
+    background: var(--ivory);
+    border-bottom: 1px solid var(--border);
+  }
+  .concept-preview.dark { background: var(--navy); }
+  .concept-preview svg {
+    max-width: 70%;
+    max-height: 70%;
+    height: auto;
+  }
+  .concept-body {
+    padding: 28px 32px 32px;
+  }
+  .concept-num {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    color: var(--ochre-deep);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .concept-name {
+    font-family: "Noto Serif JP", serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .concept-desc {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-bottom: 22px;
+    line-height: 1.85;
+  }
+  .concept-lockups {
+    border-top: 1px solid var(--border);
+    padding-top: 22px;
+    display: grid;
+    gap: 18px;
+  }
+  .lockup-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 8px 0;
+  }
+  .lockup-row.dark {
+    background: var(--navy);
+    padding: 14px 16px;
+    border-radius: 4px;
+  }
+  .lockup-mini {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+  }
+  .lockup-label {
+    font-family: "Inter", sans-serif;
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    min-width: 80px;
+  }
+  .lockup-row.dark .lockup-label { color: rgba(255,255,255,0.6); }
+  .lockup-jp {
+    font-family: "Noto Serif JP", serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+  .lockup-row.dark .lockup-jp { color: var(--ivory); }
+  .lockup-en {
+    font-family: "Inter", sans-serif;
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .lockup-row.dark .lockup-en { color: var(--ochre); }
+  @media (max-width: 768px) {
+    .grid { grid-template-columns: 1fr; }
+    .concept-preview { height: 220px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="page">
+    <div class="page-eyebrow">Logo Concepts · 2026.04</div>
+    <h1>成勢アフリカンフーズ — ロゴ案</h1>
+    <p class="page-lead">
+      ブランドのコア方向（日本式×アフリカ、信頼感のあるコーポレート、Degasライク）を踏まえた5案。
+      気に入った番号を教えてください。必要に応じて細部を仕上げます。
+    </p>
+  </header>
+
+  <div class="grid">
+
+    <!-- ============ Concept 01: 成 Hanko ============ -->
+    <div class="concept">
+      <div class="concept-preview">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="10" width="180" height="180" fill="#0F2741" rx="4"/>
+          <rect x="10" y="10" width="180" height="180" fill="none" stroke="#C9A35A" stroke-width="0.8" rx="4" opacity="0.3" transform="translate(4,4)"/>
+          <text x="100" y="100" font-family="Noto Serif JP, serif" font-size="128" font-weight="700" fill="#C9A35A" text-anchor="middle" dominant-baseline="central">成</text>
+        </svg>
+      </div>
+      <div class="concept-body">
+        <div class="concept-num">Concept 01</div>
+        <div class="concept-name">Hanko / 成 印章</div>
+        <p class="concept-desc">
+          日本の「判子」文化を想起させる、角型の印章風マーク。「成勢」の頭文字「成」を印として刻む。
+          Degasのようなコーポレートな信頼感と、日本的アイデンティティを両立できる一案。
+        </p>
+        <div class="concept-lockups">
+          <div class="lockup-row">
+            <svg viewBox="0 0 200 200" class="lockup-mini" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="200" fill="#0F2741" rx="6"/>
+              <text x="100" y="100" font-family="Noto Serif JP, serif" font-size="128" font-weight="700" fill="#C9A35A" text-anchor="middle" dominant-baseline="central">成</text>
+            </svg>
+            <div class="lockup-label">Lockup</div>
+            <div>
+              <div class="lockup-jp">成勢アフリカンフーズ</div>
+              <div class="lockup-en">NARUSE AFRICAN FOODS</div>
+            </div>
+          </div>
+          <div class="lockup-row dark">
+            <svg viewBox="0 0 200 200" class="lockup-mini" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="200" fill="#C9A35A" rx="6"/>
+              <text x="100" y="100" font-family="Noto Serif JP, serif" font-size="128" font-weight="700" fill="#0F2741" text-anchor="middle" dominant-baseline="central">成</text>
+            </svg>
+            <div class="lockup-label">Dark BG</div>
+            <div>
+              <div class="lockup-jp">成勢アフリカンフーズ</div>
+              <div class="lockup-en">NARUSE AFRICAN FOODS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ Concept 02: Circular Monogram N ============ -->
+    <div class="concept">
+      <div class="concept-preview">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="90" fill="none" stroke="#0F2741" stroke-width="2.5"/>
+          <circle cx="100" cy="100" r="82" fill="none" stroke="#C9A35A" stroke-width="0.8" opacity="0.5"/>
+          <text x="100" y="100" font-family="Fraunces, serif" font-size="110" font-weight="700" fill="#0F2741" text-anchor="middle" dominant-baseline="central" font-style="italic">N</text>
+          <text x="100" y="170" font-family="Inter, sans-serif" font-size="10" letter-spacing="0.25em" fill="#0F2741" text-anchor="middle" opacity="0.6">EST · 2026</text>
+        </svg>
+      </div>
+      <div class="concept-body">
+        <div class="concept-num">Concept 02</div>
+        <div class="concept-name">Circular Monogram "N"</div>
+        <p class="concept-desc">
+          円形のフレームに、イタリック体の "N" を配したクラシックな企業章。
+          下部に EST · 2026 の刻印で、伝統と信頼感を演出。モノクロでも崩れない汎用性が強み。
+        </p>
+        <div class="concept-lockups">
+          <div class="lockup-row">
+            <svg viewBox="0 0 200 200" class="lockup-mini" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="90" fill="none" stroke="#0F2741" stroke-width="4"/>
+              <text x="100" y="100" font-family="Fraunces, serif" font-size="120" font-weight="700" fill="#0F2741" text-anchor="middle" dominant-baseline="central" font-style="italic">N</text>
+            </svg>
+            <div class="lockup-label">Lockup</div>
+            <div>
+              <div class="lockup-jp">成勢アフリカンフーズ</div>
+              <div class="lockup-en">NARUSE AFRICAN FOODS</div>
+            </div>
+          </div>
+          <div class="lockup-row dark">
+            <svg viewBox="0 0 200 200" class="lockup-mini" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="90" fill="none" stroke="#C9A35A" stroke-width="4"/>
+              <text x="100" y="100" font-family="Fraunces, serif" font-size="120" font-weight="700" fill="#C9A35A" text-anchor="middle" dominant-baseline="central" font-style="italic">N</text>
+            </svg>
+            <div class="lockup-label">Dark BG</div>
+            <div>
+              <div class="lockup-jp">成勢アフリカンフーズ</div>
+              <div class="lockup-en">NARUSE AFRICAN FOODS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ Concept 03: Africa Mark ============ -->
+    <div class="concept">
+      <div class="concept-preview">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="92" fill="none" stroke="#0F2741" stroke-width="1.5" opacity="0.2"/>
+          <g transform="translate(35, 40) scale(0.26)">
+            <path d="
+              M 128 92 Q 148 78 180 74 L 218 72 Q 258 70 285 80 Q 318 85 338 96 Q 352 104 348 124
+              L 346 146 Q 352 166 360 180 L 365 198 L 372 218 Q 388 222 405 224 Q 422 230 425 244
+              Q 418 262 408 272 Q 394 282 378 292 L 368 322 Q 364 356 362 388 L 352 420
+              Q 342 450 322 476 Q 298 498 268 504 Q 238 506 220 496 Q 210 482 214 460
+              Q 220 438 228 410 L 232 380 L 226 345 L 222 312 Q 218 300 208 288
+              Q 204 278 208 270 L 202 266 Q 192 263 182 266 L 170 263 Q 155 264 140 262
+              Q 118 258 100 248 Q 86 236 80 218 Q 76 198 82 176 Q 90 152 104 132
+              Q 118 116 126 104 Q 130 96 128 92 Z"
+              fill="#0F2741"/>
+          </g>
+          <circle cx="77" cy="108" r="6" fill="#C9A35A"/>
+          <circle cx="77" cy="108" r="12" fill="none" stroke="#C9A35A" stroke-width="0.8" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="concept-body">
+        <div class="concept-num">Concept 03</div>
+        <div class="concept-name">Continental Mark</div>
+        <p class="concept-desc">
+          アフリカ大陸シルエットを地球にかたどり、ガーナ・アクラの位置にオーカーのドットを打つ。
+          事業の地理的アイデンティティを、最もダイレクトに表現するマーク。
+        </p>
+        <div class="concept-lockups">
+          <div class="lockup-row">
+            <svg viewBox="0 0 200 200" class="lockup-mini" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(35, 40) scale(0.26)">
+                <path d="M 128 92 Q 148 78 180 74 L 218 72 Q 258 70 285 80 Q 318 85 338 96 Q 352 104 348 124 L 346 146 Q 352 166 360 180 L 365 198 L 372 218 Q 388 222 405 224 Q 422 230 425 244 Q 418 262 408 272 Q 394 282 378 292 L 368 322 Q 364 356 362 388 L 352 420 Q 342 450 322 476 Q 298 498 268 504 Q 238 506 220 496 Q 210 482 214 460 Q 220 438 228 410 L 232 380 L 226 345 L 222 312 Q 218 300 208 288 Q 204 278 208 270 L 202 266 Q 192 263 182 266 L 170 263 Q 155 264 140 262 Q 118 258 100 248 Q 86 236 80 218 Q 76 198 82 176 Q 90 152 104 132 Q 118 116 126 104 Q 130 96 128 92 Z" fill="#0F2741"/>
+              </g>
+              <circle cx="77" cy="108" r="9" fill="#C9A35A"/>
+            </svg>
+            <div class="lockup-label">Lockup</div>
+            <div>
+              <div class="lockup-jp">成勢アフリカンフーズ</div>
+              <div class="lockup-en">NARUSE AFRICAN FOODS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ Concept 04: Wordmark 成勢 ============ -->
+    <div class="concept">
+      <div class="concept-preview">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+          <text x="200" y="90" font-family="Noto Serif JP, serif" font-size="80" font-weight="700" fill="#0F2741" text-anchor="middle" dominant-baseline="central" letter-spacing="0.04em">成勢</text>
+          <line x1="120" y1="130" x2="280" y2="130" stroke="#C9A35A" stroke-width="1"/>
+          <text x="200" y="150" font-family="Inter, sans-serif" font-size="11" letter-spacing="0.35em" fill="#0F2741" text-anchor="middle" opacity="0.8">NARUSE AFRICAN FOODS</text>
+        </svg>
+      </div>
+      <div class="concept-body">
+        <div class="concept-num">Concept 04</div>
+        <div class="concept-name">Wordmark / 成勢</div>
+        <p class="concept-desc">
+          ロゴマークを持たず、「成勢」の2文字＋英字ラインによる純粋なワードマーク。
+          文字組みだけで強さと格調を生む、老舗・信頼重視の企業に多い硬派路線。
+        </p>
+        <div class="concept-lockups">
+          <div class="lockup-row">
+            <svg viewBox="0 0 400 200" class="lockup-mini" style="width:auto;height:44px" xmlns="http://www.w3.org/2000/svg">
+              <text x="200" y="90" font-family="Noto Serif JP, serif" font-size="80" font-weight="700" fill="#0F2741" text-anchor="middle" dominant-baseline="central">成勢</text>
+              <text x="200" y="150" font-family="Inter, sans-serif" font-size="11" letter-spacing="0.35em" fill="#0F2741" text-anchor="middle" opacity="0.8">NARUSE AFRICAN FOODS</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ Concept 05: Bowl & Grain ============ -->
+    <div class="concept">
+      <div class="concept-preview">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Bowl -->
+          <path d="M 40 100 Q 100 180 160 100" fill="#0F2741" stroke="#0F2741" stroke-width="3" stroke-linejoin="round"/>
+          <line x1="30" y1="100" x2="170" y2="100" stroke="#0F2741" stroke-width="3" stroke-linecap="round"/>
+          <!-- Steam lines -->
+          <path d="M 75 80 Q 72 72 78 65 Q 84 58 80 50" stroke="#0F2741" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.8"/>
+          <path d="M 100 75 Q 97 67 103 60 Q 109 53 105 45" stroke="#0F2741" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.8"/>
+          <path d="M 125 80 Q 122 72 128 65 Q 134 58 130 50" stroke="#0F2741" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.8"/>
+          <!-- Dot accent (sun / Africa / grain) -->
+          <circle cx="100" cy="28" r="8" fill="#C9A35A"/>
+        </svg>
+      </div>
+      <div class="concept-body">
+        <div class="concept-num">Concept 05</div>
+        <div class="concept-name">Bowl &amp; Sun</div>
+        <p class="concept-desc">
+          湯気立ち上るお椀と、アフリカの太陽を象徴するオーカーの円。
+          外食業・食文化という業態をストレートに表現しつつ、温かみと希望を感じさせるマーク。
+        </p>
+        <div class="concept-lockups">
+          <div class="lockup-row">
+            <svg viewBox="0 0 200 200" class="lockup-mini" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 40 100 Q 100 180 160 100" fill="#0F2741" stroke="#0F2741" stroke-width="4" stroke-linejoin="round"/>
+              <line x1="30" y1="100" x2="170" y2="100" stroke="#0F2741" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="100" cy="28" r="14" fill="#C9A35A"/>
+            </svg>
+            <div class="lockup-label">Lockup</div>
+            <div>
+              <div class="lockup-jp">成勢アフリカンフーズ</div>
+              <div class="lockup-en">NARUSE AFRICAN FOODS</div>
+            </div>
+          </div>
+          <div class="lockup-row dark">
+            <svg viewBox="0 0 200 200" class="lockup-mini" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 40 100 Q 100 180 160 100" fill="#F6F1E8" stroke="#F6F1E8" stroke-width="4" stroke-linejoin="round"/>
+              <line x1="30" y1="100" x2="170" y2="100" stroke="#F6F1E8" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="100" cy="28" r="14" fill="#C9A35A"/>
+            </svg>
+            <div class="lockup-label">Dark BG</div>
+            <div>
+              <div class="lockup-jp">成勢アフリカンフーズ</div>
+              <div class="lockup-en">NARUSE AFRICAN FOODS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
