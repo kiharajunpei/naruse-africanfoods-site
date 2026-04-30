@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>営業日報 — 成勢アフリカンフーズ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f2741;
+    --ochre: #c9a35a;
+    --ink: #14161a;
+    --paper: #ffffff;
+    --line: #000000;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #e9e6df;
+    color: var(--ink);
+    font-family: "Noto Sans JP", "Inter", sans-serif;
+    font-size: 13px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* A4 sheet */
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 24px auto;
+    padding: 18mm 16mm;
+    background: var(--paper);
+    box-shadow: 0 2px 24px rgba(0,0,0,0.08);
+  }
+
+  /* Brand header */
+  .brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--navy);
+    margin-bottom: 22px;
+  }
+  .brand-mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .brand-stamp {
+    width: 36px;
+    height: 36px;
+    background: var(--navy);
+    color: var(--ochre);
+    font-family: "Noto Serif JP", serif;
+    font-weight: 700;
+    font-size: 22px;
+    display: grid;
+    place-items: center;
+    border-radius: 2px;
+  }
+  .brand-name-jp {
+    font-family: "Noto Serif JP", serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--navy);
+    letter-spacing: 0.04em;
+  }
+  .brand-name-en {
+    font-family: "Inter", sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: var(--navy);
+    opacity: 0.7;
+    margin-top: 2px;
+  }
+  .brand-meta {
+    text-align: right;
+    font-family: "Inter", sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--navy);
+    opacity: 0.7;
+  }
+
+  /* Title block */
+  .doc-title-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    margin-bottom: 16px;
+  }
+  .doc-title {
+    font-family: "Noto Serif JP", serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 0.3em;
+    text-indent: 0.3em;
+  }
+  .doc-date {
+    font-family: "Noto Serif JP", serif;
+    font-size: 13px;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+  }
+  .doc-date .blank {
+    display: inline-block;
+    min-width: 28px;
+    border-bottom: 1px solid var(--line);
+    margin: 0 4px;
+    text-align: center;
+  }
+
+  /* Generic bordered field */
+  .field {
+    border: 1px solid var(--line);
+    margin-bottom: 10px;
+  }
+  .field-head {
+    background: #f6f1e8;
+    border-bottom: 1px solid var(--line);
+    padding: 6px 10px;
+    font-family: "Noto Serif JP", serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--navy);
+    letter-spacing: 0.08em;
+  }
+  .field-body {
+    padding: 10px 12px;
+    min-height: 56px;
+  }
+
+  /* Identity row: 氏名 / 所属 */
+  .id-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .id-cell {
+    border: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 76px 1fr;
+  }
+  .id-label {
+    background: #f6f1e8;
+    border-right: 1px solid var(--line);
+    padding: 8px 10px;
+    font-family: "Noto Serif JP", serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--navy);
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+  }
+  .id-value {
+    padding: 8px 10px;
+    min-height: 30px;
+  }
+
+  /* Visits table */
+  .visits {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--line);
+    margin-bottom: 10px;
+  }
+  .visits th, .visits td {
+    border: 1px solid var(--line);
+    padding: 8px 10px;
+    font-size: 12px;
+    vertical-align: top;
+    text-align: left;
+  }
+  .visits thead th {
+    background: #f6f1e8;
+    font-family: "Noto Serif JP", serif;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: 0.08em;
+    text-align: center;
+  }
+  .visits col.col-time { width: 90px; }
+  .visits col.col-place { width: 200px; }
+  .visits td.time {
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    letter-spacing: 0.04em;
+  }
+  .visits tbody tr { height: 36px; }
+
+  /* Tall body fields */
+  .field-body.tall { min-height: 90px; }
+  .field-body.short { min-height: 56px; }
+
+  /* Footer line */
+  .foot-note {
+    margin-top: 14px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    font-family: "Inter", sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--navy);
+    opacity: 0.7;
+  }
+
+  /* Print */
+  @page { size: A4; margin: 0; }
+  @media print {
+    html, body { background: #fff; }
+    .sheet {
+      margin: 0;
+      box-shadow: none;
+      width: 210mm;
+      min-height: 297mm;
+      padding: 16mm 14mm;
+    }
+    .no-print { display: none !important; }
+  }
+
+  /* Toolbar (screen only) */
+  .toolbar {
+    max-width: 210mm;
+    margin: 16px auto 0;
+    text-align: right;
+  }
+  .toolbar button {
+    background: var(--navy);
+    color: #fff;
+    border: 0;
+    padding: 8px 16px;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+  .toolbar button:hover { background: #0a1d32; }
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  <button onclick="window.print()">印刷 / PDF保存</button>
+</div>
+
+<div class="sheet">
+
+  <!-- Brand header -->
+  <div class="brand">
+    <div class="brand-mark">
+      <div class="brand-stamp">成</div>
+      <div>
+        <div class="brand-name-jp">成勢アフリカンフーズ</div>
+        <div class="brand-name-en">NARUSE AFRICAN FOODS</div>
+      </div>
+    </div>
+    <div class="brand-meta">
+      DAILY REPORT
+    </div>
+  </div>
+
+  <!-- Title + date -->
+  <div class="doc-title-row">
+    <div class="doc-title">営業日報</div>
+    <div class="doc-date">
+      令和<span class="blank"></span>年<span class="blank"></span>月<span class="blank"></span>日
+    </div>
+  </div>
+
+  <!-- 氏名 / 所属 -->
+  <div class="id-row">
+    <div class="id-cell">
+      <div class="id-label">氏　名</div>
+      <div class="id-value"></div>
+    </div>
+    <div class="id-cell">
+      <div class="id-label">所　属</div>
+      <div class="id-value"></div>
+    </div>
+  </div>
+
+  <!-- 本日の目標 -->
+  <div class="field">
+    <div class="field-head">本日の目標</div>
+    <div class="field-body short"></div>
+  </div>
+
+  <!-- 訪問・業務 -->
+  <table class="visits">
+    <colgroup>
+      <col class="col-time">
+      <col class="col-place">
+      <col>
+    </colgroup>
+    <thead>
+      <tr>
+        <th>訪問時間</th>
+        <th>訪問先</th>
+        <th>業務内容・成果</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="time">：</td><td></td><td></td></tr>
+      <tr><td class="time">：</td><td></td><td></td></tr>
+      <tr><td class="time">：</td><td></td><td></td></tr>
+      <tr><td class="time">：</td><td></td><td></td></tr>
+      <tr><td class="time">：</td><td></td><td></td></tr>
+      <tr><td class="time">：</td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <!-- 報告事項 -->
+  <div class="field">
+    <div class="field-head">報告事項</div>
+    <div class="field-body tall"></div>
+  </div>
+
+  <!-- 明日の予定 -->
+  <div class="field">
+    <div class="field-head">明日の予定</div>
+    <div class="field-body tall"></div>
+  </div>
+
+  <div class="foot-note">
+    <span>NARUSE AFRICAN FOODS LTD.</span>
+    <span>ACCRA · GHANA / TOKYO · JAPAN</span>
+  </div>
+
+</div>
+
+</body>
+</html>
